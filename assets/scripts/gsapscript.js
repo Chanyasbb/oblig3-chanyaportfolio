@@ -10,14 +10,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (startButton) {
     startButton.addEventListener('click', function () {
-      const firstSection = document.querySelectorAll('section')[1]; 
+      const firstSection = document.querySelectorAll('section')[5]; 
       if (firstSection) {
-        gsap.to(window, { duration: 1, scrollTo: { y: firstSection, offsetY: 0 }, ease: "power2.inOut" }); 
+        gsap.to(window, { duration: 4, scrollTo: { y: firstSection, offsetY: 0 }, ease: "power2.inOut" }); 
       }
     });
   }
 
-  // Animate text blocks
+  // Animate this can animate the bg instead 
   const textBlocks = document.querySelectorAll('.text-block, .middle-text');
 
   textBlocks.forEach(block => {
@@ -104,3 +104,5 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 });
+
+//earth will talk interactive 
