@@ -12,7 +12,6 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Poppins", sans-serif;
-  color: #e3ecf5;
 }
 
 img {
@@ -227,6 +226,136 @@ section:has(.transition-bg) {
   background-color: #000;
 }
 
+.scene {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5vw;
+}
+
+.scene1-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 0;
+}
+
+.earth-speech {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  max-width: 1200px;
+}
+
+.earth-container {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.earth {
+  width: 40%;
+  height: auto;
+  image-rendering: pixelated;
+  animation: floatEarth 1.5s ease-in-out infinite;
+}
+
+.speech-container {
+  width: 50%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.speech-bubble {
+  text-align: left;
+  display: block;
+  padding: 1rem;
+  font-family: "Courier Prime", monospace;
+  font-size: 14px;
+  line-height: 1.4;
+  background-color: #fff;
+  border: 4px solid #000;
+  box-shadow: 4px 4px 0 #465c79;
+  position: relative;
+  height: auto;
+  min-height: 100px;
+  max-width: 100%;
+  width: 80%;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: -15px;
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  border: 4px solid #000000;
+  box-shadow: 4px 4px 0 #465c79;
+  transform: rotate(45deg);
+}
+
+#dots::after {
+  content: "|";
+  animation: blink 1s infinite steps(1);
+  margin-left: 4px;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.scroll-message {
+  display: none;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #6d6c6c;
+  opacity: 0;
+}
+
+.intrc-button {
+  font-family: "Courier Prime", monospace;
+  background-color: #2e7d32;
+  color: #ffffff;
+  border: 4px solid #000000;
+  margin-top: 10px;
+  width: 150px;
+  height: 55px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 4px 4px 0px #000000;
+  border-radius: 0;
+  transition: none;
+}
+.intrc-button:hover, .intrc-button:focus {
+  background-color: #388e3c;
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000000;
+  outline: none;
+}
+
 body {
   margin: 0;
   background-color: #000;
@@ -244,20 +373,6 @@ body {
   pointer-events: none;
   z-index: 1000;
   transition: opacity 1s ease-in-out;
-}
-
-/* Blink (skjerm blir hvit raskt) */
-.blink {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: white;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 999;
-  transition: opacity 0.2s ease-in-out;
 }
 
 /* Glitch effect */

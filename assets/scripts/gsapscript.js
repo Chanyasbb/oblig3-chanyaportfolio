@@ -17,8 +17,61 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  //animate earth talking and interactive button to type out message
+  const dotsSpan = document.getElementById("dots");
+  const button = document.getElementById("talkBtn");
+  const scrollMessage = document.getElementById("scrollMessage");
+  
+  let typing = false;
+  let dotInterval;
+  let typeInterval;
+  const message = "Hello, human. I’ve been feeling unwell...";
+  
+  function animateDots() {
+    let dotCount = 0;
+    dotInterval = setInterval(() => {
+      dotsSpan.textContent = ".".repeat(dotCount % 4);
+      dotCount++;
+    }, 500);
+  }
+  
+  function typeMessage(text, el, callback) {
+    let i = 0;
+    el.textContent = "";
+  
+    typeInterval = setInterval(() => {
+      if (i < text.length) {
+        el.textContent += text.charAt(i);
+        i++;
+      } else {
+        clearInterval(typeInterval);
+        if (callback) callback();
+      }
+    }, 50);
+  }
+  
+  animateDots();
+  
+  button.addEventListener("click", () => {
+    if (typing) return;
+    typing = true;
+    clearInterval(dotInterval);
+  
+    typeMessage(message, dotsSpan, () => {
+      // After typing, wait 2 sec, then animate the scroll guide
+      setTimeout(() => {
+        scrollMessage.style.display = "block"; // just reveal, no animation yet
+        gsap.to(scrollMessage, {
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out"
+        });
+      }, 2000);
+    });
+  });
+
   // Animate this can animate the bg instead 
-  const textBlocks = document.querySelectorAll('.text-block, .middle-text');
+  //const textBlocks = document.querySelectorAll('.text-block, .middle-text');
 
   textBlocks.forEach(block => {
     gsap.set(block, { opacity: 0, y: 20 });
@@ -44,65 +97,62 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Glitch effect on image
-  const glitchImg = document.querySelector('.glitch-img');
-  const blackout = document.querySelector('.blackout');
-  const blink = document.querySelector('.blink');
+  // const glitchImg = document.querySelector('.glitch-img');
+  //const blackout = document.querySelector('.blackout');
+  //const blink = document.querySelector('.blink');
 
-  if (glitchImg) {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            glitchImg.classList.add('start-glitch');
+  //if (glitchImg) {
+    //const observer = new IntersectionObserver(entries => {
+      //entries.forEach(entry => {
+       // if (entry.isIntersecting) {
+          //setTimeout(() => {
+           // glitchImg.classList.add('start-glitch');
+            //setTimeout(() => {
+            //  glitchImg.classList.add('full-glitch');
 
-            setTimeout(() => {
-              glitchImg.classList.add('full-glitch');
+             // setTimeout(() => {
+              //  blink.style.opacity = 1;
 
-              setTimeout(() => {
-                blink.style.opacity = 1;
+              //  setTimeout(() => {
+              //    blink.style.opacity = 0;
+                //  blackout.style.opacity = 1;
+               // }, 150); 
+            //  }, 5000);
 
-                setTimeout(() => {
-                  blink.style.opacity = 0;
-                  blackout.style.opacity = 1;
-                }, 150); 
-              }, 5000);
+          //  }, 2000);
 
-            }, 2000);
+        //  }, 3000); 
+      //  }
+   //   });
+ //   }, { threshold: 0.5 });
 
-          }, 3000); 
-        }
-      });
-    }, { threshold: 0.5 });
-
-    observer.observe(glitchImg);
-  }
+ //   observer.observe(glitchImg);
+ // }
 
   //  Animate dramatic white messages after glitch
-  const messages = document.querySelectorAll('.message');
+  //const messages = document.querySelectorAll('.message');
 
-  messages.forEach(message => {
-    gsap.set(message, { opacity: 0, scale: 0.8 });
+  //messages.forEach(message => {
+    //gsap.set(message, { opacity: 0, scale: 0.8 });
 
-    ScrollTrigger.create({
-      trigger: message,
-      start: "top 60%",   // Fade in when message is at 60% of viewport
-      end: "top 20%",     // Fade out when it goes past 20%
-      scrub: true,
-      onEnter: () => {
-        gsap.to(message, { opacity: 1, scale: 1, duration: 2, ease: "power2.out" });
-      },
-      onLeave: () => {
-        gsap.to(message, { opacity: 0, scale: 1.2, duration: 2, ease: "power2.in" });
-      },
-      onEnterBack: () => {
-        gsap.to(message, { opacity: 1, scale: 1, duration: 2, ease: "power2.out" });
-      },
-      onLeaveBack: () => {
-        gsap.to(message, { opacity: 0, scale: 0.8, duration: 2, ease: "power2.in" });
-      }
-    });
-  });
+    //ScrollTrigger.create({
+      //trigger: message,
+      //start: "top 60%",   // Fade in when message is at 60% of viewport
+      //end: "top 20%",     // Fade out when it goes past 20%
+      //scrub: true,
+      //onEnter: () => {
+        //gsap.to(message, { opacity: 1, scale: 1, duration: 2, ease: "power2.out" });},
+      //onLeave: () => {
+        //gsap.to(message, { opacity: 0, scale: 1.2, duration: 2, ease: "power2.in" });
+      //},
+      //onEnterBack: () => {
+        //gsap.to(message, { opacity: 1, scale: 1, duration: 2, ease: "power2.out" });
+      //},
+      //onLeaveBack: () => {
+        //gsap.to(message, { opacity: 0, scale: 0.8, duration: 2, ease: "power2.in" });
+      //}
+    //});
+  //});
 
 });
 
-//earth will talk interactive 
