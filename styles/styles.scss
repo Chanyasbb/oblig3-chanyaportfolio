@@ -19,12 +19,14 @@ html {
   }
   
   body {
+    margin: 0;
     font-family: $font-family-body;
     font-size: $font-size-base;
     color: $text-color;
     background-color: $background-color;
     line-height: 1.6;
   }
+
   
   h1, h2, h3, h4, h5, h6 {
     font-family: $font-family-titles;
@@ -244,7 +246,7 @@ section {
 
   // Target only sections that contain a transition image
   &:has(.transition-bg) {
-    height: 300px; // Match max-height of the image
+    height: 100%; // Match max-height of the image
     background-color: #000; // fallback background
   }
 }
@@ -260,6 +262,7 @@ section {
   padding: 0 5vw;
 }
 
+//Background 
 .scene1-bg {
   position: absolute;
   top: 0;
@@ -270,104 +273,115 @@ section {
   z-index: 0;
 }
 
+//Layout of speech
 .earth-speech {
   display: flex;
+  margin: 0 auto;
   width: 100%;
-  justify-content: space-between;
+  max-width: 1200px;
+  justify-content: space-around;
   align-items: center;
   z-index: 2;
-  max-width: 1200px;
+  gap: 2rem;
 }
 
 .earth-container {
-  width: 50%;
+  width: 35%;
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.earth {
-  width: 40%;
-  height: auto;
-  image-rendering: pixelated;
-  animation: floatEarth 1.5s ease-in-out infinite;
+  .earth {
+    width: 60%;
+    height: auto;
+    image-rendering: pixelated;
+    animation: floatEarth 1.5s ease-in-out infinite;
+  }
 }
-
 
 .speech-container {
-  width: 50%;
-  text-align: left;
+  width: 55%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-}
-
-.speech-bubble {
   text-align: left;
-  display: block; 
-  padding: 1rem;
-  font-family: $font-family-body;
-  font-size: $font-size-sm;
-  line-height: 1.4;
-  background-color: #fff;
-  border: 4px solid #000;
-  box-shadow: 4px 4px 0 $secondary-color;
-  position: relative;
-  height: auto; 
-  min-height: 100px;
-  max-width: 100%;
-  width: 80%;
-  white-space: pre-wrap;
-  overflow-wrap: break-word; // wraps long text
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: 20px; 
-    left: -15px;
-    width: 10px;
-    height: 10px;
-    background-color: #ffffff;
-    border: 4px solid #000000;
+  .speech-bubble {
+    display: block;
+    padding: 1rem;
+    font-family: $font-family-body;
+    font-size: $font-size-base;
+    line-height: 1.3;
+    background-color: #fff;
+    border: 4px solid #000;
     box-shadow: 4px 4px 0 $secondary-color;
-    transform: rotate(45deg);
+    position: relative;
+    min-height: 100px;
+    max-width: 100%;
+    width: 80%;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    text-align: left;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: -14px;
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      border: 4px solid #000;
+      box-shadow: 4px 4px 0 $secondary-color;
+      transform: rotate(45deg);
+    }
+
+    #dots {
+      display: block;
+      width: 100%;
+      text-align: left;
+
+      &::after {
+        content: "|";
+        animation: blink 1s infinite steps(1);
+        margin-left: 4px;
+        display: inline-block;
+        vertical-align: baseline;
+      }
+    }
+
+    #scrollMessage {
+      display: none;
+      margin-top: 2px;
+      font-size: 0.8rem;
+      color: $text-color;
+      opacity: 0;
+      text-align: left;
+      width: 100%;
+    }
   }
 }
 
-#dots::after {
-  content: "|";
-  animation: blink 1s infinite steps(1);
-  margin-left: 4px;
-  display: inline-block;
-  vertical-align: baseline;
-}
-
+//Blinking Cursor 
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
 
-.scroll-message {
-  display: none; // Hide by default
-  margin-top: 1rem;
-  font-size: 0.8rem;
-  color: $text-color;
-  opacity: 0;
-}
-
+//Interactive button 
 .intrc-button {
   font-family: $font-family-body;
   background-color: #2e7d32;
-  color: #ffffff;
-  border: 4px solid #000000;
+  color: #fff;
+  border: 4px solid #000;
   margin-top: 10px;
   width: 150px;
   height: 55px;
   padding: 8px 12px;
   cursor: pointer;
   font-size: $font-size-sm;
-  box-shadow: 4px 4px 0px #000000;
+  box-shadow: 4px 4px 0 #000;
   border-radius: 0;
   transition: none;
 
@@ -375,20 +389,78 @@ section {
   &:focus {
     background-color: #388e3c;
     transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0px #000000;
+    box-shadow: 2px 2px 0 #000;
     outline: none;
   }
 }
 
+// SCENE 2 
+.scene-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 4rem;
+  padding: 8vh 10vw;
+  min-height: 200vh;
 
+  .earth-fixed {
+    flex: 1 1 35%;
+    display: flex;
+    align-items: center;
+center;
 
+    img {
+      position: fixed;
+      top: 10vh;
+      width: 60%;
+      max-width: 200px;
+      height: auto;
+      image-rendering: pixelated;
+      animation: floatEarth 2s ease-in-out infinite;
+    }
+  }
 
+  .facts-content {
+    flex: 2 1 55%;
 
-// Optional: ensure body doesn't peek through
-body {
-  margin: 0;
-  background-color: #000; // fallback if images load slowly
+    h2 {
+      font-family: $font-family-titles;
+      font-size: $font-size-lg;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: $text-color;
+    }
+
+    .facts-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+
+      li {
+        background: #fff;
+        border: 2px solid #000;
+        box-shadow: 4px 4px 0 $secondary-color;
+        padding: 1.5rem;
+        font-family: $font-family-body;
+        font-size: $font-size-base;
+        color: $text-color;
+
+        h3 {
+          font-family: $font-family-titles;
+          font-size: 1.25rem;
+          margin-bottom: 0.5rem;
+          font-weight: 600;
+          color: $primary-color;
+        }
+      }
+    }
+  }
 }
+
 
 /* Blackout (skjerm blir svart) */
 .blackout {

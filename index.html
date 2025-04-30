@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tellus - A Story of Awakening</title>
+       <!-- Load fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles/reset.css">
@@ -17,7 +18,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://assets.codepen.io/16327/ScrollSmoother.min.js"></script>
 
-    <!-- script last for right order otherwise nothing -->
+    <!-- script last for right order -->
     <script src="/assets/scripts/gsapscript.js" defer></script>
 </head>
 
@@ -51,24 +52,18 @@
      </section>
 
      <section>
-        <div>
             <img src="assets/images/transition2-bg.png" alt="Transition background mid blue" class="transition-bg">
-        </div>
      </section>
 
      <section>
-        <div>
             <img src="assets/images/transition3-bg.png" alt="Transition background blue " class="transition-bg">
-        </div>
      </section>
 
-     <section>
-        <div>
-            <img src="assets/images/transition4-bg.png" alt="Transition background light blue " class="transition-bg">
-        </div>
-     </section>
+    <section>
+        <img src="assets/images/transition4-bg.png" alt="Transition background light blue" class="transition-bg">
+    </section>
 
-    <!-- Scene 1 -->
+    <!-- SCENE 1  -->
     <section class="scene">
         <img src="assets/images/scene1.PNG" alt="Scene background" class="scene1-bg">
       
@@ -87,6 +82,32 @@
           <button class="intrc-button" id="talkBtn" aria-label="Talk to Earth">Hello...</button>
         </div>
       </section>
+
+    <!-- SCENE 2 -->
+    <section class="scene-2">  <!-- easier styling -->
+        <div class="earth-fixed">
+          <img src="assets/images/sadearth.svg" alt="Earth sad earth explaining">
+        </div>
+      
+  <div class="facts-content">
+    <h2>What’s Happening to Me?</h2>
+    <ul class="facts-list">
+      <li>
+        <h3>Global Temperatures Are Rising</h3>
+        <p>The Earth’s average surface temperature has increased significantly due to greenhouse gas emissions.</p>
+      </li>
+      <li>
+        <h3>Ice Caps Are Melting</h3>
+        <p>Melting glaciers and ice sheets are causing sea levels to rise, threatening coastal ecosystems and cities.</p>
+      </li>
+      <li>
+        <h3>Extreme Weather Is Increasing</h3>
+        <p>Heatwaves, wildfires, and floods are becoming more frequent due to climate disruption.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
 
 </body>
 

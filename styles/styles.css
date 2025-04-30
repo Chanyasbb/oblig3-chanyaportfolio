@@ -3,6 +3,7 @@ html {
 }
 
 body {
+  margin: 0;
   font-family: "Courier Prime", monospace;
   font-size: 16px;
   color: #6d6c6c;
@@ -222,7 +223,7 @@ section {
   overflow: hidden;
 }
 section:has(.transition-bg) {
-  height: 300px;
+  height: 100%;
   background-color: #000;
 }
 
@@ -249,73 +250,85 @@ section:has(.transition-bg) {
 
 .earth-speech {
   display: flex;
+  margin: 0 auto;
   width: 100%;
-  justify-content: space-between;
+  max-width: 1200px;
+  justify-content: space-around;
   align-items: center;
   z-index: 2;
-  max-width: 1200px;
+  gap: 2rem;
 }
 
 .earth-container {
-  width: 50%;
+  width: 35%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-.earth {
-  width: 40%;
+.earth-container .earth {
+  width: 60%;
   height: auto;
   image-rendering: pixelated;
   animation: floatEarth 1.5s ease-in-out infinite;
 }
 
 .speech-container {
-  width: 50%;
-  text-align: left;
+  width: 55%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-}
-
-.speech-bubble {
   text-align: left;
+}
+.speech-container .speech-bubble {
   display: block;
   padding: 1rem;
   font-family: "Courier Prime", monospace;
-  font-size: 14px;
-  line-height: 1.4;
+  font-size: 16px;
+  line-height: 1.3;
   background-color: #fff;
   border: 4px solid #000;
   box-shadow: 4px 4px 0 #465c79;
   position: relative;
-  height: auto;
   min-height: 100px;
   max-width: 100%;
   width: 80%;
   white-space: pre-wrap;
   overflow-wrap: break-word;
+  text-align: left;
 }
-.speech-bubble::after {
+.speech-container .speech-bubble::after {
   content: "";
   position: absolute;
   top: 20px;
-  left: -15px;
+  left: -14px;
   width: 10px;
   height: 10px;
-  background-color: #ffffff;
-  border: 4px solid #000000;
+  background-color: #fff;
+  border: 4px solid #000;
   box-shadow: 4px 4px 0 #465c79;
   transform: rotate(45deg);
 }
-
-#dots::after {
+.speech-container .speech-bubble #dots {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+.speech-container .speech-bubble #dots::after {
   content: "|";
   animation: blink 1s infinite steps(1);
   margin-left: 4px;
   display: inline-block;
   vertical-align: baseline;
+}
+.speech-container .speech-bubble #scrollMessage {
+  display: none;
+  margin-top: 2px;
+  font-size: 0.8rem;
+  color: #6d6c6c;
+  opacity: 0;
+  text-align: left;
+  width: 100%;
 }
 
 @keyframes blink {
@@ -326,39 +339,85 @@ section:has(.transition-bg) {
     opacity: 0;
   }
 }
-.scroll-message {
-  display: none;
-  margin-top: 1rem;
-  font-size: 0.8rem;
-  color: #6d6c6c;
-  opacity: 0;
-}
-
 .intrc-button {
   font-family: "Courier Prime", monospace;
   background-color: #2e7d32;
-  color: #ffffff;
-  border: 4px solid #000000;
+  color: #fff;
+  border: 4px solid #000;
   margin-top: 10px;
   width: 150px;
   height: 55px;
   padding: 8px 12px;
   cursor: pointer;
   font-size: 14px;
-  box-shadow: 4px 4px 0px #000000;
+  box-shadow: 4px 4px 0 #000;
   border-radius: 0;
   transition: none;
 }
 .intrc-button:hover, .intrc-button:focus {
   background-color: #388e3c;
   transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0px #000000;
+  box-shadow: 2px 2px 0 #000;
   outline: none;
 }
 
-body {
+.scene-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 4rem;
+  padding: 8vh 10vw;
+  min-height: 200vh;
+}
+.scene-2 .earth-fixed {
+  flex: 1 1 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scene-2 .earth-fixed img {
+  position: fixed;
+  top: 10vh;
+  width: 60%;
+  max-width: 200px;
+  height: auto;
+  image-rendering: pixelated;
+  animation: floatEarth 2s ease-in-out infinite;
+}
+.scene-2 .facts-content {
+  flex: 2 1 55%;
+}
+.scene-2 .facts-content h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #6d6c6c;
+}
+.scene-2 .facts-content .facts-list {
+  list-style: none;
+  padding: 0;
   margin: 0;
-  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.scene-2 .facts-content .facts-list li {
+  background: #fff;
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0 #465c79;
+  padding: 1.5rem;
+  font-family: "Courier Prime", monospace;
+  font-size: 16px;
+  color: #6d6c6c;
+}
+.scene-2 .facts-content .facts-list li h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #696f75;
 }
 
 /* Blackout (skjerm blir svart) */

@@ -70,6 +70,37 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+
+//Earth scene 2
+// Animate each fact item
+gsap.utils.toArray(".facts-list li").forEach((fact) => {
+  gsap.from(fact, {
+    opacity: 0,
+    y: 40,
+    duration: 1,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: fact,
+      start: "top 100%",
+      toggleActions: "play none none reverse"
+    }
+  });
+});
+
+// Animate the Earth image from the top on scroll
+gsap.from(".scene-2 .earth-fixed img", {
+  opacity: 0,
+  y: -50,
+  duration: 1.2,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".scene-2",
+    start: "top 40%",
+    toggleActions: "play none none reverse"
+  }
+});
+
+
   // Animate this can animate the bg instead 
   //const textBlocks = document.querySelectorAll('.text-block, .middle-text');
 
