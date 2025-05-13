@@ -6,7 +6,7 @@ body {
   margin: 0;
   font-family: "Courier Prime", monospace;
   font-size: 16px;
-  color: #6d6c6c;
+  color: #2f2e2e;
   background-color: #000000;
   line-height: 1.6;
 }
@@ -260,7 +260,7 @@ section:has(.transition-bg) {
 }
 
 .earth-container {
-  width: 35%;
+  width: 40%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -325,7 +325,7 @@ section:has(.transition-bg) {
   display: none;
   margin-top: 2px;
   font-size: 0.8rem;
-  color: #6d6c6c;
+  color: #2f2e2e;
   opacity: 0;
   text-align: left;
   width: 100%;
@@ -362,13 +362,14 @@ section:has(.transition-bg) {
 }
 
 .scene-2 {
+  background-image: url("../assets/images/bg.png");
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: flex-start;
   gap: 4rem;
   padding: 8vh 11vw;
-  min-height: 200vh;
+  min-height: 100vh;
 }
 .scene-2 .earth-fixed {
   flex: 1 1 35%;
@@ -379,7 +380,7 @@ section:has(.transition-bg) {
   position: fixed;
   top: 10vh;
   width: 60%;
-  max-width: 200px;
+  max-width: 230px;
   height: auto;
   image-rendering: pixelated;
   animation: floatEarth 2s ease-in-out infinite;
@@ -392,7 +393,8 @@ section:has(.transition-bg) {
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 2rem;
-  color: #6d6c6c;
+  color: #2f2e2e;
+  text-align: center;
 }
 .scene-2 .facts-content .facts-list {
   list-style: none;
@@ -400,7 +402,7 @@ section:has(.transition-bg) {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
 }
 .scene-2 .facts-content .facts-list li {
   background: #fff;
@@ -409,7 +411,7 @@ section:has(.transition-bg) {
   padding: 1.5rem;
   font-family: "Courier Prime", monospace;
   font-size: 16px;
-  color: #6d6c6c;
+  color: #2f2e2e;
 }
 .scene-2 .facts-content .facts-list li h3 {
   font-family: "Poppins", sans-serif;

@@ -2,7 +2,7 @@
 $primary-color: #696f75;
 $secondary-color: #465c79;
 $background-color: #000000;
-$text-color: #6d6c6c;
+$text-color: #2f2e2e;
 
 // Typography
 $font-family-body: 'Courier Prime', monospace;
@@ -286,7 +286,7 @@ section {
 }
 
 .earth-container {
-  width: 35%;
+  width: 40%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -396,13 +396,14 @@ section {
 
 // SCENE 2 
 .scene-2 {
+  background-image: url('../assets/images/bg.png'); //fix later / add new bg 
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: flex-start;
   gap: 4rem;
   padding: 8vh 11vw;
-  min-height: 200vh;
+  min-height: 100vh;
 
   .earth-fixed {
     flex: 1 1 35%;
@@ -413,7 +414,7 @@ section {
       position: fixed;
       top: 10vh;
       width: 60%;
-      max-width: 200px;
+      max-width: 230px;
       height: auto;
       image-rendering: pixelated;
       animation: floatEarth 2s ease-in-out infinite;
@@ -429,6 +430,7 @@ section {
       font-weight: 600;
       margin-bottom: 2rem;
       color: $text-color;
+      text-align: center; //better on the left? but this is better for responsive 
     }
 
     .facts-list {
@@ -437,7 +439,7 @@ section {
       margin: 0;
       display: flex;
       flex-direction: column;
-      gap: 3rem;
+      gap: 2rem;
 
       li {
         background: #fff;

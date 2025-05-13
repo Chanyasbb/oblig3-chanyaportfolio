@@ -77,7 +77,7 @@ gsap.utils.toArray(".facts-list li").forEach((fact) => {
   gsap.from(fact, {
     opacity: 0,
     y: 40,
-    duration: 1,
+    duration: 1.2,
     ease: "power2.out",
     scrollTrigger: {
       trigger: fact,
@@ -88,17 +88,18 @@ gsap.utils.toArray(".facts-list li").forEach((fact) => {
 });
 
 // Animate the Earth image from the top on scroll
-gsap.from(".scene-2 .earth-fixed img", {
-  opacity: 0,
-  y: -50,
-  duration: 1.2,
-  ease: "power2.out",
+gsap.timeline({
   scrollTrigger: {
     trigger: ".scene-2",
-    start: "top 40%",
-    toggleActions: "play none none reverse"
+    start: "top center",     // when top of .scene-2 hits middle of viewport and when the image is in view 
+    end: "bottom top",    // when bottom of .scene-2 hits top of viewport    // vise versa for the bottom      
+    scrub: true,                    
   }
-});
+})
+.fromTo(".scene-2 .earth-fixed img",
+  { opacity: 0, y: -50 },
+  { opacity: 3, y: 0, duration: 1.2, ease: "power2.out" }
+);
 
 
   // Animate this can animate the bg instead 
