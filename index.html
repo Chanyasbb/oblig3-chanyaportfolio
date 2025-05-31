@@ -8,8 +8,8 @@
        <!-- Load fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/reset.css">
-    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/styles.css">
 
 
     <!-- Load GSAP -->
@@ -18,13 +18,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://assets.codepen.io/16327/ScrollSmoother.min.js"></script>
 
-    <!-- script last for right order -->
-    <script src="/assets/scripts/gsapscript.js" defer></script>
+
+    <script src="assets/scripts/gsapscript.js" defer></script>
+    <script src="assets/scripts/gsap.min.js" defer></script>
 </head>
 
+<!-- PS: this version only works in the hosted server because the files are pathed differently! dont use the live port -->
+
 <body>
-
-
     <!-- HERO SECTION -->
     <section class="screen screen--hero">
         <div class="hero-items">
@@ -233,9 +234,6 @@
         <p>Created by Chanya Sanboonsiri </p>
     </footer>
 
-    <!-- Load the script -->
-    <script src="/assets/scripts/script.js" defer></script>
-    <script src="/assets/scripts/gsap.min.js" defer></script>
 
 </body>
 </html>
