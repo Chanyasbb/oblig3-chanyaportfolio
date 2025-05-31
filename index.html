@@ -5,27 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tellus - A Story of Awakening</title>
-       <!-- Load fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/styles.css">
+<!-- Fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+   <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet" />
+ 
 
+   <link rel="stylesheet" href="styles/reset.css" />
+   <link rel="stylesheet" href="styles/styles.css" />
 
-    <!-- Load GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://assets.codepen.io/16327/ScrollSmoother.min.js"></script>
-
-
-    <script src="assets/scripts/gsapscript.js" defer></script>
-    <script src="assets/scripts/gsap.min.js" defer></script>
 </head>
 
 <!-- PS: this version only works in the hosted server because the files are pathed differently! dont use the live port -->
-
 <body>
+  <main>
     <!-- HERO SECTION -->
     <section class="screen screen--hero">
         <div class="hero-items">
@@ -62,7 +54,7 @@
     </section>
 
     <section class="scene">
-      <img src="assets/images/scene1.PNG" alt="Scene background" class="scene1-bg">
+      <img src="assets/images/scene1.png" alt="Scene background" class="scene1-bg">
     
       <div class="earth-speech">
         <div class="earth-container">
@@ -132,7 +124,7 @@
 
 <section class="scene-5">
   <!-- Background city SVG as background-image in CSS -->
-   <img src="/assets/images/overheatedcity.svg" alt="overheating city">
+   <img src="assets/images/overheatedcity.svg" alt="overheating city">
 
   <!-- Inline SVG for sun -->
   <svg class="sun-svg" width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
@@ -234,6 +226,10 @@
         <p>Created by Chanya Sanboonsiri </p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollToPlugin.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js" defer></script>
+    <script src="assets/scripts/gsapscript.js" defer></script>
 
 </body>
 </html>

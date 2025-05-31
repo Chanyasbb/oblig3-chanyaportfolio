@@ -42,7 +42,7 @@ img {
 // Hero section
 .screen--hero {
   position: relative;
-  background: url('../assets/images/bg.png') no-repeat center center;
+  background: url('../images/bg.png') no-repeat center center;
   background-size: cover;
   height: 100vh;
   display: flex;
@@ -326,7 +326,7 @@ section {
 
 // Scene 2
 .scene-2 {
-  background-image: url('../assets/images/bg.png');
+  background-image: url('../images/bg.png');
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -416,7 +416,7 @@ section {
 // Scene 4
 .scene-4 {
   position: relative;
-  background: url('../assets/images/scene4.png') no-repeat center center;
+  background: url('../images/scene4.png') no-repeat center center;
   background-size: cover;
   background-color: #d8f3dc;
   min-height: 100vh;
@@ -523,7 +523,7 @@ section {
   overflow: hidden;
 
   //city background image
-  img[src*="overheatedcity.svg"] {
+  .overheated-city {
     position: absolute;
     top: 0;
     left: 50%;
