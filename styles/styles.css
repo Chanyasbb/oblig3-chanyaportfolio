@@ -20,20 +20,6 @@ img {
   height: auto;
   display: block;
   margin: 0 auto;
-  position: sticky;
-  top: 0;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-p {
-  position: relative;
-  z-index: 1;
-}
-
-img {
-  width: 100%;
-  height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -60,7 +46,6 @@ img {
 .screen--hero .earth {
   width: 100%;
   height: auto;
-  display: block;
   animation: floatEarth 2s ease-in-out infinite;
 }
 .screen--hero .cloud {
@@ -115,11 +100,9 @@ img {
   width: 200px;
   border-radius: 0;
   font-size: 20px;
-  font-weight: normal;
   cursor: pointer;
   text-align: center;
   box-shadow: 4px 4px 0px #000000;
-  transition: none;
   image-rendering: pixelated;
 }
 .screen--hero .hero-content .start-button:hover, .screen--hero .hero-content .start-button:focus {
@@ -154,7 +137,7 @@ img {
     transform: translateY(0);
   }
 }
-/* sections */
+/* Sections */
 .transition-bg {
   display: block;
   width: 100%;
@@ -468,14 +451,6 @@ section:has(.transition-bg) {
   margin-bottom: 1rem;
 }
 
-@keyframes floatClouds {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
 @keyframes flyBee {
   0%, 100% {
     transform: translateY(0) translateX(0);
@@ -499,9 +474,6 @@ section:has(.transition-bg) {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  /* Background city image */
-  /* Inline sun SVG */
-  /* Text container */
 }
 .scene-5 img[src*="overheatedcity.svg"] {
   position: absolute;
@@ -569,55 +541,102 @@ section:has(.transition-bg) {
     transform: scale(1.1);
   }
 }
-@keyframes pulseSun {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-}
 .scene-6 {
   background-color: #f1f8f4;
   min-height: 100vh;
+  max-width: 100%;
   padding: 8vh 10vw;
   text-align: center;
 }
+.scene-6 .awakening-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.scene-6 .hopeful-earth {
+  width: 200px;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  animation: floatEarth 2s ease-in-out infinite;
+  display: block;
+}
+.scene-6 .heart-icon {
+  width: 90px;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  animation: floatEarth 2.5s ease-in-out infinite;
+  display: block;
+  align-self: center;
+}
 .scene-6 .text-block {
   max-width: 700px;
-  margin: 0 auto 3rem auto;
+  margin: 2rem auto 3rem auto;
 }
 .scene-6 .text-block h2 {
   font-size: 25px;
   color: #696f75;
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 .scene-6 .text-block p {
   font-size: 16px;
   font-family: "Courier Prime", monospace;
   color: #2f2e2e;
+  line-height: 1.5;
+  margin-bottom: 1rem;
 }
 .scene-6 .hope-icons {
   display: flex;
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
+  padding: 1rem 0;
 }
 .scene-6 .hope-icons .hope-item {
   background: #ffffff;
   border: 3px solid #000;
   box-shadow: 4px 4px 0 #465c79;
-  padding: 1.5rem;
+  padding: 1.5rem 1rem;
   width: 180px;
   font-family: "Courier Prime", monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.scene-6 .hope-icons .hope-item:hover, .scene-6 .hope-icons .hope-item:focus-within {
+  transform: translateY(-5px);
+  box-shadow: 6px 6px 0 #334359;
+  cursor: pointer;
 }
 .scene-6 .hope-icons .hope-item img {
-  width: 50px;
-  margin-bottom: 1rem;
+  width: 60px;
+  height: auto;
+  margin-bottom: 0.8rem;
+  filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.15));
 }
 .scene-6 .hope-icons .hope-item p {
   font-size: 14px;
   color: #696f75;
+  font-weight: 600;
+  margin: 0;
+}
+.scene-6 > p {
+  font-family: "Courier Prime", monospace;
+  color: #696f75;
+  font-size: 16px;
+  margin-top: 2rem;
 }
 
 .scene-7 {
@@ -658,7 +677,10 @@ section:has(.transition-bg) {
   transform: scale(1.05);
 }
 .scene-7 .action-grid .action-card img {
-  width: 50px;
+  width: 60px;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
   margin-bottom: 1rem;
 }
 .scene-7 .action-grid .action-card h3 {
@@ -676,58 +698,96 @@ section:has(.transition-bg) {
   text-align: center;
 }
 .scene-7 .earth-response img {
-  width: 150px;
+  width: 180px;
+  height: auto;
   margin-bottom: 1rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  animation: floatEarth 2s ease-in-out infinite;
 }
 .scene-7 .earth-response p {
   font-family: "Courier Prime", monospace;
-  font-size: 16px;
+  font-size: 20px;
   color: #465c79;
 }
 
 .scene-8 {
-  background-color: #e0f7f1;
-  height: 100vh;
-  padding: 8vh 10vw;
+  background-color: #cde9d6;
+  min-height: 100vh;
+  padding: 6vh 10vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-.scene-8 h1 {
-  font-size: 3rem;
+.scene-8 .final-call {
+  max-width: 600px;
+}
+.scene-8 .final-call h2 {
+  font-size: 2.5rem;
+  color: #696f75;
+  margin-bottom: 1rem;
+  font-weight: 700;
   font-family: "Poppins", sans-serif;
-  color: #005ba7;
-  margin-bottom: 2rem;
 }
-.scene-8 .start-button {
+.scene-8 .final-call p {
   font-family: "Courier Prime", monospace;
-  padding: 12px 16px;
-  background-color: #2e7d32;
-  color: #ffffff;
-  border: 4px solid #000000;
-  width: 200px;
-  border-radius: 0;
-  font-size: 20px;
-  font-weight: normal;
-  cursor: pointer;
-  text-align: center;
-  box-shadow: 4px 4px 0px #000000;
-  transition: none;
-  image-rendering: pixelated;
+  font-size: 16px;
+  color: #2f2e2e;
+  margin-bottom: 2rem;
+  line-height: 1.5;
 }
-.scene-8 .start-button:hover, .scene-8 .start-button:focus {
-  background-color: #388e3c;
-  box-shadow: 2px 2px 0px #000000;
-  transform: translate(2px, 2px);
+.scene-8 .final-call .start-button {
+  display: inline-block;
+  background-color: #2e7d32;
+  color: #fff;
+  font-family: "Courier Prime", monospace;
+  font-size: 18px;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.scene-8 .final-call .start-button:hover, .scene-8 .final-call .start-button:focus-visible {
+  background-color: #205823;
+  box-shadow: 5px 5px 0 #334359;
   outline: none;
 }
-.scene-8 .start-button:focus-visible {
-  outline: 2px solid #ffffff;
+
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #2e7d32;
+  color: #fff;
+  padding: 0.75rem 2rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #465c79;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.back-to-top:hover, .back-to-top:focus-visible {
+  background-color: #51565a;
+  box-shadow: 4px 4px 0 #334359;
+  outline: none;
 }
 
-@media (max-width: 700px) {
+footer {
+  background-color: #cde9d6;
+  color: #6a9778;
+  font-family: "Courier Prime", monospace;
+  text-align: center;
+  padding: 1rem 2rem;
+  box-shadow: none;
+}
+
+@media (max-width: 600px) {
   .screen--hero {
     flex-direction: column;
     justify-content: center;
@@ -758,13 +818,53 @@ section:has(.transition-bg) {
     font-size: 1rem;
   }
   .screen--hero .hero-content p {
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin: 0 auto 1.5rem auto;
     max-width: 90%;
   }
   .screen--hero .hero-content .start-button {
-    width: 50%;
+    width: 40%;
     font-size: 1.2rem;
     padding: 0.7rem 1rem;
+  }
+  .scene-2 {
+    flex-direction: column;
+    align-items: center;
+  }
+  .scene-2 .earth-fixed {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  .scene-2 .earth-fixed img {
+    width: 45%;
+    max-width: 300px;
+    position: relative;
+  }
+  .scene-2 .facts-content {
+    width: 85%;
+    text-align: center;
+  }
+  .scene-2 .facts-content h2 {
+    font-size: 25px;
+    margin-bottom: 1.5rem;
+  }
+  .scene-2 .facts-content .facts-list li {
+    width: 100%;
+    padding: 1rem;
+    font-size: 14px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001s !important;
+    scroll-behavior: auto !important;
+  }
+  .earth, .cloud, .earth-fixed img, .hopeful-earth, .heart-icon, .action-card,
+  .earth-response img {
+    animation: none !important;
   }
 }/*# sourceMappingURL=styles.css.map */

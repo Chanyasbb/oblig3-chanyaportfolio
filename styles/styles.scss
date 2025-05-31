@@ -13,158 +13,139 @@ $font-size-base: 16px;
 $font-size-lg: 25px;
 $font-size-sm: 14px;
 
-//general page setting/styles 
+// General page settings/styles
 html {
-    font-size: 100%;
-  }
-  
-  body {
-    margin: 0;
-    font-family: $font-family-body;
-    font-size: $font-size-base;
-    color: $text-color;
-    background-color: $background-color;
-    line-height: 1.6;
-  }
+  font-size: 100%;
+}
 
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: $font-family-titles;
-  }
+body {
+  margin: 0;
+  font-family: $font-family-body;
+  font-size: $font-size-base;
+  color: $text-color;
+  background-color: $background-color;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-titles;
+}
 
 img {
   max-width: 100%;
   height: auto;
   display: block;
   margin: 0 auto;
-  position: sticky;
-  top: 0;
   object-fit: cover;
 }
 
-p {
+// Hero section
+.screen--hero {
   position: relative;
-  z-index: 1;
+  background: url('../assets/images/bg.png') no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 2rem;
+
+  .hero-items {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    width: 40%;
+    max-width: 400px;
+  }
+
+  .earth {
+    width: 100%;
+    height: auto;
+    animation: floatEarth 2s ease-in-out infinite;
+  }
+
+  .cloud {
+    position: absolute;
+    max-width: 100%;
+    height: auto;
+    width: 170px;
+    opacity: 0.8;
+    animation: floatClouds 3s ease-in-out infinite;
+
+    &.cloud1 {
+      top: 2%;
+      left: 60%;
+      animation-delay: 0s;
+    }
+
+    &.cloud2 {
+      top: 20%;
+      left: -20%;
+      animation-delay: 1s;
+    }
+
+    &.cloud3 {
+      top: 70%;
+      left: -10%;
+      animation-delay: 2s;
+    }
+  }
+
+  .hero-content {
+    position: relative;
+    width: 50%;
+    margin-left: auto;
+    text-align: left;
+    color: #ffffff;
+    z-index: 2;
+    padding: 1rem;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+
+    //OBS: This button style is used again in different sections :) 
+    .start-button { 
+      display: inline-block;
+      font-family: $font-family-body;
+      padding: 12px 16px;
+      background-color: #2e7d32;
+      color: #ffffff;
+      border: 4px solid #000000;
+      width: 200px;
+      border-radius: 0;
+      font-size: 20px;
+      cursor: pointer;
+      text-align: center;
+      box-shadow: 4px 4px 0px #000000;
+      image-rendering: pixelated;
+
+      &:hover,
+      &:focus {
+        background-color: #388e3c;
+        box-shadow: 2px 2px 0px #000000;
+        transform: translate(2px, 2px);
+        outline: none;
+      }
+
+      &:focus-visible {
+        outline: 2px solid #ffffff;
+      }
+    }
+  }
 }
 
-
-
-  img {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-  }
-
-
-// hero sections 
-.screen--hero {
-    position: relative;
-    background: url('../assets/images/bg.png') no-repeat center center;
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding: 2rem;
-  
-    .hero-items {
-      position: absolute;
-      top: 50%;
-      left: 10%;
-      transform: translateY(-50%);
-      width: 40%;
-      max-width: 400px;
-    }
-  
-    .earth {
-      width: 100%;
-      height: auto;
-      display: block;
-      animation: floatEarth 2s ease-in-out infinite;
-    }
-  
-    .cloud {
-      position: absolute;
-      max-width: 100%;
-      height: auto;
-      width: 170px;
-      opacity: 0.8;
-      animation: floatClouds 3s ease-in-out infinite;
-  
-      &.cloud1 {
-        top: 2%;
-        left: 60%;
-        animation-delay: 0s;
-      }
-  
-      &.cloud2 {
-        top: 20%;
-        left: -20%;
-        animation-delay: 1s;
-      }
-  
-      &.cloud3 {
-        top: 70%;
-        left: -10%;
-        animation-delay: 2s;
-      }
-    }
-  
-    .hero-content {
-      position: relative;
-      width: 50%;
-      margin-left: auto;
-      text-align: left;
-      color: #ffffff;
-      z-index: 2;
-      padding: 1rem;
-  
-      h1 {
-        font-size: 3rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-      }
-  
-      p {
-        font-size: 1.4rem;
-        margin-bottom: 2rem;
-        max-width: 600px;
-      }
-  
-      .start-button {
-        display: inline-block;
-        font-family: $font-family-body;
-        padding: 12px 16px;
-        background-color: #2e7d32;
-        color: #ffffff;
-        border: 4px solid #000000;
-        width: 200px;
-        border-radius: 0; 
-        font-size: 20px;
-        font-weight: normal;
-        cursor: pointer;
-        text-align: center;
-        box-shadow: 4px 4px 0px #000000;
-        transition: none; 
-        image-rendering: pixelated;
-      
-        &:hover,
-        &:focus {
-          background-color: #388e3c;
-          box-shadow: 2px 2px 0px #000000;
-          transform: translate(2px, 2px); 
-          outline: none;
-        }
-      
-        &:focus-visible {
-          outline: 2px solid #ffffff;
-        }
-      }
-    }
-  }
-
-  // Animations for hero page 
+// Keyframes
 @keyframes floatClouds {
   0% { transform: translateX(0) translateY(0); }
   50% { transform: translateX(20px) translateY(-10px); }
@@ -178,12 +159,12 @@ p {
 }
 
 
-/* sections */
+/* Sections */
 .transition-bg {
   display: block;
   width: 100%;
   height: auto;
-  max-height: 300px; // Adjust height as needed
+  max-height: 300px; 
   object-fit: cover;
 }
 
@@ -193,13 +174,14 @@ section {
   overflow: hidden;
 
   // Target only sections that contain a transition image
+  //had to add this because of the transition image 
   &:has(.transition-bg) {
-    height: 100%; // Match max-height of the image
-    background-color: #000; // fallback background
+    height: 100%; 
+    background-color: #000; 
   }
 }
 
-//scene 1 
+// Scene 1
 .scene {
   position: relative;
   overflow: hidden;
@@ -210,7 +192,7 @@ section {
   padding: 0 5vw;
 }
 
-//Background 
+// Background
 .scene1-bg {
   position: absolute;
   top: 0;
@@ -221,7 +203,7 @@ section {
   z-index: 0;
 }
 
-//Layout of speech
+// Layout of speech
 .earth-speech {
   display: flex;
   margin: 0 auto;
@@ -311,13 +293,13 @@ section {
   }
 }
 
-//Blinking Cursor 
+// Blinking Cursor
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
 
-//Interactive button 
+// Interactive button
 .intrc-button {
   font-family: $font-family-body;
   background-color: #2e7d32;
@@ -342,9 +324,9 @@ section {
   }
 }
 
-// SCENE 2 
+// Scene 2
 .scene-2 {
-  background-image: url('../assets/images/bg.png'); 
+  background-image: url('../assets/images/bg.png');
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -378,7 +360,7 @@ section {
       font-weight: 600;
       margin-bottom: 2rem;
       color: $text-color;
-      text-align: center; //better on the left? but this is better for responsive 
+      text-align: center; // better on the left? but this is better for responsive
     }
 
     .facts-list {
@@ -410,7 +392,7 @@ section {
   }
 }
 
-
+// Scene 3
 .scene-3 {
   min-height: 110vh;
   display: flex;
@@ -431,6 +413,7 @@ section {
   }
 }
 
+// Scene 4
 .scene-4 {
   position: relative;
   background: url('../assets/images/scene4.png') no-repeat center center;
@@ -521,12 +504,6 @@ section {
 }
 
 // Animations for clouds and bees
-
-@keyframes floatClouds {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
 @keyframes flyBee {
   0%, 100% { transform: translateY(0) translateX(0); }
   25% { transform: translateY(-10px) translateX(5px); }
@@ -534,6 +511,7 @@ section {
   75% { transform: translateY(-10px) translateX(5px); }
 }
 
+//scene 5 
 .scene-5 {
   position: relative;
   background-color: #fbeae6;
@@ -544,7 +522,7 @@ section {
   align-items: center;
   overflow: hidden;
 
-  /* Background city image */
+  //city background image
   img[src*="overheatedcity.svg"] {
     position: absolute;
     top: 0;
@@ -558,7 +536,7 @@ section {
     pointer-events: none;
   }
 
-  /* Inline sun SVG */
+  //the sun svg (this moves during responsive but it still looks good and gives a nice effect)
   .sun-svg {
     position: absolute;
     top: 10%;
@@ -582,7 +560,7 @@ section {
     }
   }
 
-  /* Text container */
+  //text containers to style w images 
   .tipping-point-container {
     position: relative;
     z-index: 5;
@@ -622,36 +600,62 @@ section {
   }
 }
 
-@keyframes pulseSun {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-}
-
-
+//scene 6
 .scene-6 {
   background-color: #f1f8f4;
   min-height: 100vh;
+  max-width: 100%;
   padding: 8vh 10vw;
   text-align: center;
 
+  .awakening-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap; 
+  }
+
+  .hopeful-earth {
+    width: 200px;
+    margin: 0; //so the heart is closer to the earth 
+    padding: 0;
+    height: auto;
+    object-fit: contain;
+    animation: floatEarth 2s ease-in-out infinite;
+    display: block;
+  }
+
+  .heart-icon {
+    width: 90px;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    object-fit: contain;
+    animation: floatEarth 2.5s ease-in-out infinite;
+    display: block;
+    align-self: center;
+  }
+
   .text-block {
     max-width: 700px;
-    margin: 0 auto 3rem auto;
+    margin: 2rem auto 3rem auto;
 
     h2 {
       font-size: $font-size-lg;
       color: $primary-color;
       margin-bottom: 1rem;
+      font-weight: 700;
     }
 
     p {
       font-size: $font-size-base;
       font-family: $font-family-body;
       color: $text-color;
+      line-height: 1.5;
+      margin-bottom: 1rem;
     }
   }
 
@@ -660,29 +664,53 @@ section {
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
+    padding: 1rem 0;
 
     .hope-item {
       background: #ffffff;
       border: 3px solid #000;
       box-shadow: 4px 4px 0 $secondary-color;
-      padding: 1.5rem;
+      padding: 1.5rem 1rem;
       width: 180px;
       font-family: $font-family-body;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover,
+      &:focus-within {
+        transform: translateY(-5px);
+        box-shadow: 6px 6px 0 darken($secondary-color, 10%);
+        cursor: pointer;
+      }
 
       img {
-        width: 50px;
-        margin-bottom: 1rem;
+        width: 60px;
+        height: auto;
+        margin-bottom: 0.8rem;
+        filter: drop-shadow(1px 1px 0 rgba(0,0,0,0.15));
       }
 
       p {
         font-size: $font-size-sm;
         color: $primary-color;
+        font-weight: 600;
+        margin: 0;
       }
     }
   }
+  
+  > p {
+    font-family: $font-family-body;
+    color: $primary-color;
+    font-size: $font-size-base;
+    margin-top: 2rem;
+  }
 }
 
-
+//scene 7
 .scene-7 {
   background-color: #d5ebdf;
   min-height: 100vh;
@@ -725,7 +753,9 @@ section {
       }
 
       img {
-        width: 50px;
+        width: 60px;
+        height: auto;
+        object-fit: contain;
         margin-bottom: 1rem;
       }
 
@@ -748,115 +778,202 @@ section {
     text-align: center;
 
     img {
-      width: 150px;
+      width: 180px;
+      height: auto;
       margin-bottom: 1rem;
+      object-fit: contain;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      animation: floatEarth 2s ease-in-out infinite;
     }
 
     p {
       font-family: $font-family-body;
-      font-size: $font-size-base;
+      font-size: 20px;
       color: $secondary-color;
     }
   }
 }
 
-
 .scene-8 {
-  background-color: #e0f7f1;
-  height: 100vh;
-  padding: 8vh 10vw;
+  background-color: #cde9d6; 
+  min-height: 100vh;
+  padding: 6vh 10vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
 
-  h1 {
-    font-size: 3rem;
-    font-family: $font-family-titles;
-    color: #005ba7;
-    margin-bottom: 2rem;
-  }
+  .final-call {
+    max-width: 600px;
 
-  .start-button {
-    font-family: $font-family-body;
-    padding: 12px 16px;
-    background-color: #2e7d32;
-    color: #ffffff;
-    border: 4px solid #000000;
-    width: 200px;
-    border-radius: 0;
-    font-size: 20px;
-    font-weight: normal;
-    cursor: pointer;
-    text-align: center;
-    box-shadow: 4px 4px 0px #000000;
-    transition: none;
-    image-rendering: pixelated;
-
-    &:hover,
-    &:focus {
-      background-color: #388e3c;
-      box-shadow: 2px 2px 0px #000000;
-      transform: translate(2px, 2px);
-      outline: none;
+    h2 {
+      font-size: 2.5rem; 
+      color: $primary-color;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      font-family: $font-family-titles;
     }
 
-    &:focus-visible {
-      outline: 2px solid #ffffff;
+    p {
+      font-family: $font-family-body;
+      font-size: $font-size-base;
+      color: $text-color;
+      margin-bottom: 2rem;
+      line-height: 1.5;
+    }
+
+    .start-button {
+      display: inline-block;
+      background-color: #2e7d32;
+      color: #fff;
+      font-family: $font-family-body;
+      font-size: 18px; // 
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover,
+      &:focus-visible {
+        background-color: darken(#2e7d32, 10%);
+        box-shadow: 5px 5px 0 darken($secondary-color, 10%);
+        outline: none;
+      }
     }
   }
 }
 
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #2e7d32;
+  color: #fff;
+  padding: 0.75rem 2rem;
+  font-family: $font-family-titles;
+  font-size: $font-size-base;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 $secondary-color;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
+  &:hover,
+  &:focus-visible {
+    background-color: darken($primary-color, 10%);
+    box-shadow: 4px 4px 0 darken($secondary-color, 10%);
+    outline: none;
+  }
+}
 
-  //responsive styles
-  //It still looks good with 450px-700px
-  @media (max-width: 700px) {
-    .screen--hero {
-      flex-direction: column;
-      justify-content: center;
-      align-content: center;
-      padding: 1rem;
+footer {
+  background-color: #cde9d6;   
+  color: #6a9778;          
+  font-family: $font-family-body;
+  text-align: center;
+  padding: 1rem 2rem;
+  box-shadow: none;                 
+}
+
+// Responsive styles
+@media (max-width: 600px) {
+  .screen--hero {
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 1rem;
+    text-align: center;
+
+    .hero-items {
+      position: relative;
+      top: auto;
+      left: auto;
+      transform: none;
+      width: 60%;
+      max-width: 300px;
+      margin-bottom: 1.5rem;
+    }
+
+    .cloud {
+      width: 120px;
+      opacity: 0.7;
+    }
+
+    .hero-content {
+      width: 100%;
+      margin-left: 0;
+      padding: 0;
       text-align: center;
-  
-      .hero-items {
-        position: relative;
-        top: auto;
-        left: auto;
-        transform: none;
-        width: 60%;
-        max-width: 300px;
-        margin-bottom: 1.5rem;
+
+      h1 {
+        font-size: 1rem;
       }
-  
-      .cloud {
-        width: 120px;
-        opacity: 0.7;
+
+      p {
+        font-size: 1rem;
+        margin: 0 auto 1.5rem auto;
+        max-width: 90%;
       }
-  
-      .hero-content {
-        width: 100%;
-        margin-left: 0;
-        padding: 0;
-        text-align: center;
-  
-        h1 {
-          font-size: 1rem;
-        }
-  
-        p {
-          font-size: 0.8rem;
-          margin: 0 auto 1.5rem auto;
-          max-width: 90%;
-        }
-  
-        .start-button {
-          width: 50%;
-          font-size: 1.2rem;
-          padding: 0.7rem 1rem;
-        }
+
+      .start-button {
+        width: 40%;
+        font-size: 1.2rem;
+        padding: 0.7rem 1rem;
       }
     }
   }
 
+  //some spesific stylings because of the containers can lead to overflow
+  .scene-2{
+    flex-direction: column;
+    align-items: center;
+
+    .earth-fixed {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+
+      img {
+        width: 45%;
+        max-width: 300px;
+        position: relative;
+      }
+    }
+
+    .facts-content {
+      width: 85%;
+      text-align: center;
+
+      h2 {
+        font-size: $font-size-lg;
+        margin-bottom: 1.5rem;
+      }
+
+      .facts-list {
+        li {
+          width: 100%;
+          padding: 1rem;
+          font-size: $font-size-sm;
+        }
+      }
+    }
+  }
+}
+
+//Reduced motion for accessibility! :)
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001s !important;
+    scroll-behavior: auto !important;
+  }
+
+  .earth, .cloud, .earth-fixed img, .hopeful-earth, .heart-icon, .action-card, 
+  .earth-response img {
+    animation: none !important;
+  }
+}

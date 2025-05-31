@@ -28,20 +28,47 @@ Story & concept:
 
 Html: 
 - same structure and content, just more spesific and using more classes 
+- i wrapped everyting in main this time for reabability and used a validator to help. 
 
-SCSS: 
-- Here i played around abit when making the text box. Instead of using an image i wanted to make it through scss 
+SCSS Overview
+Text Box Styling:
+- Instead of using images for speech bubbles or text boxes, I experimented with pure SCSS to create these elements. This approach provides more flexibility for styling and responsiveness without relying on image assets.
+Responsive Design:
+- Specific containers and components are styled differently using media queries to ensure they look good and function well on smaller screens. This includes adjusting widths, stacking layouts vertically, resizing images, and tweaking font sizes for better readability and usability on mobile devices.
+Variables for Colors and Typography:
+- The SCSS uses variables for primary and secondary colors, background, and text colors to maintain consistent theming throughout the site. Fonts for body text and titles are set as variables for easy global management.
+Base Styles:
+- The base font sizes, margins, and background colors are set on the html and body tags. Headings use a separate font family for clear hierarchy.
+Hero Section:
+- The .screen--hero class creates a full viewport hero area with a background image, floating earth and cloud animations, and text content aligned side-by-side on larger screens. The start button style here is reused elsewhere for consistency.
+Animations:
+- Keyframes for floating clouds and the earth create subtle continuous movement, adding life to the hero section and other scenes.
+	•	Scene Layouts:
+- Each scene is styled as a flex container with specific arrangements. For example:
+	•	Scene 1 uses a two-column layout with an earth image and speech bubble text.
+	•	Scene 2 has a fixed-position earth image beside a facts list, arranged horizontally on larger screens and stacked vertically on smaller screens.
+	•	Accessibility - Reduced Motion:
+A media query listens for the user’s system preference for reduced motion and disables or greatly reduces all animations and transitions accordingly. This respects users who may be sensitive to motion effects.
+Responsive Adjustments:
+- Media queries adjust layout, image sizes, text sizes, and button widths to maintain usability and visual appeal on screens narrower than 600px.
 
 
 
 JS: 
-- gsap 
-- appear in and out 
-- text box appearing when scroll (scrolltrigger and section )
-- smooth scrolling (scroll trigger) scroll to the section it was coded to.
+GSAP Animations:
+- The site uses GSAP (GreenSock Animation Platform) for smooth and performant animations, such as fading elements in and out and floating effects on the earth and clouds.
+Scroll-triggered Animations:
+- Using GSAP’s ScrollTrigger plugin, text boxes and other elements appear and disappear as the user scrolls through different sections, creating an engaging storytelling experience.
+Smooth Scrolling:
+- The “Start” button triggers smooth scrolling to a specific content section, improving navigation flow and user experience.
+Interactive Earth Responses:
+- When the user clicks certain buttons (action cards), the earth reacts with different images and messages, simulating a conversational or reactive interface.
+Back to Top Button:
+- A button appears after scrolling down a bit, allowing users to smoothly scroll back to the top of the page.
 
 
 
-Animations: 
-- float 
-- blink for the text box 
+List of Animations
+	•	Float: Smooth up-and-down movement applied to elements like the earth and clouds.
+	•	Blink: Cursor blinking effect used in the text box to simulate typing.
+	•	Pulse: Subtle scaling effect that makes elements gently grow and shrink, like the sun icon.
