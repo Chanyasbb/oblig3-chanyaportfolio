@@ -72,3 +72,6 @@ List of Animations
 	•	Float: Smooth up-and-down movement applied to elements like the earth and clouds.
 	•	Blink: Cursor blinking effect used in the text box to simulate typing.
 	•	Pulse: Subtle scaling effect that makes elements gently grow and shrink, like the sun icon.
+
+LIVE SERVER: https://chanyas.folk.ntnu.no/oblig3-chanspixelworld/index.html
+OLD LIVE SERVER: https://chanyas.folk.ntnu.no/oblig3-group-3/index.html
