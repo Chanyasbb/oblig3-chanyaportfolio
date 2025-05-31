@@ -105,7 +105,7 @@
   </div>
 </section>
 
-<!-- Text from scene 4 will move up and appear this instead -->
+<!-- Text from scene 3 will move up and appear this instead -->
 <section class="scene-3"> 
 <div class="text-container">
  <p> Its overwhelming, im sick!</p>
@@ -113,13 +113,11 @@
 
 <section class="scene-4">
   <div class="memories-container">
-    <img src="assets/images/white-cloud.svg" alt="healthy white cloud" class="cloud1">
-    <img src="assets/images/white-cloud.svg" alt="healthy white cloud" class="cloud2">
-    <img src="assets/images/white-cloud.svg" alt="healthy white cloud" class="cloud3">
-
     <!-- Bees -->
-    <img src="assets/images/bees.svg" alt="happy bees" class="bee1">
-    <img src="assets/images/bees.svg" alt="happy bees" class="bee2">
+    <img src="assets/images/bee-left.svg" alt="happy bees" class="bee1">
+    <img src="assets/images/bee-right.svg" alt="happy bees" class="bee2">
+    <img src="assets/images/bee-right.svg" alt="happy bees" class="bee3">
+    <img src="assets/images/bee-left.svg" alt="happy bees" class="bee4">
 
     <div class="text-block">
       <h2>I remember when I was in balance...</h2>
@@ -130,10 +128,17 @@
 </section>
 
 <section class="scene-5">
-  <div class="tipping-point-container">
-    <img src="assets/images/city.svg" alt="Overheated City" class="scene5-bg">
-    <img src="assets/images/sadearth.svg" alt="sad earth" class="sad-earth">
+  <!-- Background city SVG as background-image in CSS -->
+   <img src="/assets/images/overheatedcity.svg" alt="overheating city">
 
+  <!-- Inline SVG for sun -->
+  <svg class="sun-svg" width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <circle class="sun-large" cx="60" cy="60" r="60" fill="#FFD47D" />
+    <circle class="sun-mid" cx="60" cy="60" r="40" fill="#FFB347" />
+    <circle class="sun-small" cx="60" cy="60" r="20" fill="#FF8323" />
+  </svg>
+
+  <div class="tipping-point-container">
     <div class="text-block">
       <h2>But something changed…</h2>
       <p>You built walls of convenience. Factories roared. The oceans choked. I cried out — floods, fires, droughts.</p>
@@ -144,7 +149,7 @@
 
 <section class="scene-6">
   <div class="awakening-container">
-    <img src="assets/images/scene6-bg.svg" alt="Hopeful Earth scene" class="scene6-bg">
+    <img src="assets/images/hopefull-earth.svg" alt="Earth smilling with pink cheeks" class="hopeful-earth">
 
     <div class="text-block">
       <h2>But then... I felt something new</h2>
@@ -154,7 +159,7 @@
 
     <div class="hope-icons">
       <div class="hope-item">
-        <img src="assets/icons/plant.svg" alt="Planting tree icon">
+        <img src="assets/images/tree-icon.svg" alt="Planting tree icon">
         <p>Tree planted</p>
       </div>
       <div class="hope-item">
@@ -199,9 +204,11 @@
   </div>
 </section>
 
+<!-- fix the stylings on this  -->
 <section class="scene-8">
   <div class="final-call">
-    <h1>Take Action Now</h1>
+    <h2>Take Action Now</h2>
+    <p>Climate change is real, but so is our power to change it. Every small action counts.</p>
     <a
       href="https://sdgs.un.org/goals/goal13"
       target="_blank"

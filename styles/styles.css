@@ -69,7 +69,7 @@ img {
   height: auto;
   width: 170px;
   opacity: 0.8;
-  animation: floatClouds 5s ease-in-out infinite;
+  animation: floatClouds 3s ease-in-out infinite;
 }
 .screen--hero .cloud.cloud1 {
   top: 2%;
@@ -369,7 +369,7 @@ section:has(.transition-bg) {
 }
 
 .scene-3 {
-  min-height: 100vh;
+  min-height: 110vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -388,27 +388,76 @@ section:has(.transition-bg) {
 
 .scene-4 {
   position: relative;
+  background: url("../assets/images/scene4.png") no-repeat center center;
+  background-size: cover;
   background-color: #d8f3dc;
   min-height: 100vh;
   padding: 10vh 8vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 .scene-4 .memories-container {
   position: relative;
   text-align: center;
+  max-width: 800px;
+  width: 100%;
 }
-.scene-4 .memories-container .sad-earth {
+.scene-4 .memories-container .bee1,
+.scene-4 .memories-container .bee2,
+.scene-4 .memories-container .bee3,
+.scene-4 .memories-container .bee4 {
+  position: absolute;
+  width: 80px;
+  height: auto;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+.scene-4 .memories-container .bee1 {
+  top: -20%;
+  left: 20%;
+  animation: flyBee 4s ease-in-out infinite;
+  animation-delay: 0s;
+  width: 80px;
+}
+.scene-4 .memories-container .bee2 {
+  top: -30%;
+  right: 25%;
+  animation: flyBee 5s ease-in-out infinite;
+  animation-delay: 2s;
   width: 100px;
-  animation: floatEarth 2s ease-in-out infinite;
 }
-.scene-4 .memories-container .scene4-forest {
-  width: 300px;
-  margin: 2rem auto;
+.scene-4 .memories-container .bee3 {
+  top: 120%;
+  left: 10%;
+  animation: flyBee 4s ease-in-out infinite;
+  animation-delay: 0s;
+  width: 90px;
+}
+.scene-4 .memories-container .bee4 {
+  top: -10%;
+  right: 10%;
+  animation: flyBee 5s ease-in-out infinite;
+  animation-delay: 3s;
+  width: 70px;
 }
 .scene-4 .memories-container .text-block {
-  margin-top: 2rem;
+  position: relative;
+  margin-top: 4rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  color: #2f2e2e;
+  font-family: "Courier Prime", monospace;
+  font-size: 16px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 .scene-4 .memories-container .text-block h2 {
   font-size: 25px;
@@ -416,35 +465,89 @@ section:has(.transition-bg) {
   margin-bottom: 1rem;
 }
 .scene-4 .memories-container .text-block p {
-  font-family: "Courier Prime", monospace;
-  font-size: 16px;
-  color: #2f2e2e;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
 }
 
+@keyframes floatClouds {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes flyBee {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px);
+  }
+  50% {
+    transform: translateY(0) translateX(10px);
+  }
+  75% {
+    transform: translateY(-10px) translateX(5px);
+  }
+}
 .scene-5 {
-  background-color: #fcefe9;
+  position: relative;
+  background-color: #fbeae6;
   min-height: 100vh;
   padding: 10vh 8vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  /* Background city image */
+  /* Inline sun SVG */
+  /* Text container */
+}
+.scene-5 img[src*="overheatedcity.svg"] {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  z-index: 0;
+  pointer-events: none;
+}
+.scene-5 .sun-svg {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 120px;
+  height: 120px;
+  z-index: 10;
+}
+.scene-5 .sun-svg circle {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pulseSun 3s ease-in-out infinite;
+}
+.scene-5 .sun-svg .sun-mid {
+  animation-delay: 1s;
+}
+.scene-5 .sun-svg .sun-small {
+  animation-delay: 2s;
 }
 .scene-5 .tipping-point-container {
   position: relative;
+  z-index: 5;
+  max-width: 600px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
-.scene-5 .tipping-point-container .scene5-bg {
-  width: 100%;
-  max-width: 500px;
-  margin-bottom: 2rem;
-}
-.scene-5 .tipping-point-container .sad-earth {
-  width: 100px;
-  animation: floatEarth 2s ease-in-out infinite;
-}
 .scene-5 .tipping-point-container .text-block {
-  margin-top: 1.5rem;
+  margin-top: 0;
 }
 .scene-5 .tipping-point-container .text-block h2 {
   font-size: 25px;
@@ -455,8 +558,25 @@ section:has(.transition-bg) {
   font-size: 16px;
   font-family: "Courier Prime", monospace;
   color: #2f2e2e;
+  margin-bottom: 0.8rem;
 }
 
+@keyframes pulseSun {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+@keyframes pulseSun {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
 .scene-6 {
   background-color: #f1f8f4;
   min-height: 100vh;
@@ -635,10 +755,10 @@ section:has(.transition-bg) {
     text-align: center;
   }
   .screen--hero .hero-content h1 {
-    font-size: 2rem;
+    font-size: 1rem;
   }
   .screen--hero .hero-content p {
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin: 0 auto 1.5rem auto;
     max-width: 90%;
   }
