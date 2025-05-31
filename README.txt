@@ -74,4 +74,4 @@ List of Animations
 	•	Pulse: Subtle scaling effect that makes elements gently grow and shrink, like the sun icon.
 
 LIVE SERVER: https://chanyas.folk.ntnu.no/oblig3-chanspixelworld/index.html
-OLD LIVE SERVER: https://chanyas.folk.ntnu.no/oblig3-group-3/index.html
+OLD LIVE SERVER: https://chanyas.folk.ntnu.no/oblig3-group-3.0/index.html
